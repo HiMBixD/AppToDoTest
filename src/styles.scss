@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.w-100 {
+    width: 100%;
+}
+.col-item {
+    padding: 40px 40px 0 40px;
+}
+.mx-1 {
+    margin-left: 1em;
+    margin-right: 12em;
+}
+span {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.submit-button {
+    border: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+.norm-button {
+    margin-left: 20px;
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.light-blue {
+    background-color: #00bcd4;
+}
+.blue {
+    background-color: #2196f3;
+}
+.green {
+    background-color: #5cb85c;
+}
+.red {
+    background-color: #d9534f;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+input[type=text],input[type=date], select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.error-mess {
+    color: #d9534f;
+}

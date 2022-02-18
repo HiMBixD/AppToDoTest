@@ -1,0 +1,21 @@
+.item-detail {
+    margin: 20px 0;
+    border: 2px;
+    border-style: groove;
+    .item-top {
+        padding: 20px;
+    }
+    .item-bottom {
+        border-top: 2px;
+        border-top-style: groove;
+        padding: 20px;
+    }
+}
+.bulk-action {
+    height: 40px;   
+    border-top: 2px;
+    background-color: #e0e0e0;
+    border-top-style: groove;
+    padding: 20px;
+    margin: 0 -40px;
+}

@@ -1,0 +1,44 @@
+<div class="container">
+    <form [formGroup]="taskForm" (submit)="onAddNew()">
+        <div class="form-body">
+            <input type="text" id="taskName" name="taskName" placeholder="Add new task ..." formControlName="taskName">
+            <div class="error-mess"
+                *ngIf="taskForm?.get('taskName')?.dirty && taskForm?.get('taskName')?.errors?.['required']">
+                Name is required.
+            </div>
+            <label for="description"><strong>Description</strong></label>
+            <textarea id="description" name="description" rows="5" cols="50" formControlName="description"></textarea>
+            <div class="col">
+                <div class="col-left">
+                    <label for="dueDate"><strong>Due Date</strong></label>
+                    <input type="date" id="dueDate" name="dueDate" formControlName="dueDate">
+                </div>
+                <div class="col-right">
+                    <label for="piority"><strong>Piority</strong></label>
+                    <select id="country" name="piority" formControlName="piority">
+                        <option value="0">Low</option>
+                        <option value="1">Normal</option>
+                        <option value="2">High</option>
+                    </select>
+                </div>
+                <div>
+                    <div class="error-mess"
+                        *ngIf="taskForm?.get('dueDate')?.dirty && 
+                    (taskForm?.get('dueDate')?.errors?.['fromToday'] || taskForm?.get('dueDate')?.errors?.['required'])">
+                        Due Date is required and must equal or larger than today
+                    </div>
+                </div>
+                <div>
+                    <div class="error-mess"
+                        *ngIf="taskForm?.get('Piority')?.dirty && taskForm?.get('Piority')?.errors?.['required']">
+                        Piority is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="submit-button green" *ngIf="!isUpdateForm">Add</button>
+            <button type="button" class="submit-button green" *ngIf="isUpdateForm" (click)="onUpdate()">Update</button>
+        </div>
+    </form>
+</div>

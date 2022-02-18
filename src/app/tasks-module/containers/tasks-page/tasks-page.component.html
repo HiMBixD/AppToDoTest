@@ -1,0 +1,12 @@
+<div class="col border-2">
+    <div class="border-between col-item">
+        <div class="header">
+            <h3>New Task</h3>
+        </div>
+        <app-add-task (add)="onAddNew($event)"></app-add-task>
+    </div>
+    <div class="col-item">
+        <app-list-tasks [listTasks]="listTasks" (update)="onUpdate($event)" (remove)="onRemove($event)">
+        </app-list-tasks>
+    </div>
+</div>

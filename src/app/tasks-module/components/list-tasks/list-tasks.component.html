@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <h3>To Do List</h3>
+        </div>
+        <input type="text" id="search" name="search" placeholder="Search..." [(ngModel)]="searchValue">
+        <div class="item-detail" *ngFor="let item of listTasksSortedByDate;">
+            <div class="item-top">
+                <input type="checkbox" id="{{'action'+item.index}}" name="{{'action'+item.index}}"
+                    [checked]="listChecked.has(item.index)"
+                    (click)="listChecked.has(item.index) ? listChecked.delete(item.index) : listChecked.add(item.index)">
+                <label for="{{'action'+item.index}}" class="mx-1">{{item.taskName}}</label>
+                <div style="float: right;">
+                    <button class="norm-button light-blue"
+                        (click)="listShowed.has(item.index) ? listShowed.delete(item.index) : listShowed.add(item.index)">Detail</button>
+                    <button class="norm-button red" (click)="onRemove([item.index])">Remove</button>
+                </div>
+            </div>
+            <div class="item-bottom" *ngIf="listShowed.has(item.index)">
+                <app-add-task [isUpdateForm]="true" [taskDetails]="item" (update)="onUpdate($event)"></app-add-task>
+            </div>
+        </div>
+    </div>
+    <div class="bulk-action" *ngIf="listChecked.size > 0">
+        <span>Bulk Action:</span>
+        <div style="float: right;">
+            <button class="norm-button blue">Done</button>
+            <button class="norm-button red" (click)="onRemove(setAsCheckedArray)">Remove</button>
+        </div>
+    </div>
+</div>

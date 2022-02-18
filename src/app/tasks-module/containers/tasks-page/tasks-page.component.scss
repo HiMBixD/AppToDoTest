@@ -1,0 +1,13 @@
+.col {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 90vh;
+}
+.border-2 {
+    border: 2px;
+    border-style: groove;
+}
+.border-between {
+    border-right: 2px;
+    border-right-style: groove;
+}
